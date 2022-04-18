@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxFrame" name="MainFrame">
+		<style>wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL</style>
+		<size>876,616</size>
+		<title>VTK Clipper</title>
+		<centered>1</centered>
+		<aui_managed>0</aui_managed>
+		<object class="wxMenuBar" name="m_menubar1">
+			<label>MyMenuBar</label>
+			<object class="wxMenu">
+				<label>File</label>
+				<object class="wxMenuItem" name="menuItemOpenDicomDirectory">
+					<label>Open DICOM directory</label>
+					<help></help>
+				</object>
+				<object class="wxMenuItem" name="menuItemExit">
+					<label>Exit</label>
+					<help></help>
+				</object>
+			</object>
+			<object class="wxMenu">
+				<label>Kinect</label>
+				<object class="wxMenu">
+					<label>Rendering</label>
+					<object class="wxMenuItem" name="menuItemKinectRenderingFull">
+						<label>Full data</label>
+						<help></help>
+						<radio>1</radio>
+					</object>
+					<object class="wxMenuItem" name="menuItemKinectRenderingUserAndHands">
+						<label>User and Hands (no environment)</label>
+						<help></help>
+						<radio>1</radio>
+					</object>
+					<object class="wxMenuItem" name="menuItemKinectRenderingHandsOnly">
+						<label>Hands only</label>
+						<help></help>
+						<radio>1</radio>
+					</object>
+				</object>
+				<object class="wxMenuItem" name="menuItemKinectSimulationMode">
+					<label>Simulation mode (mouse)</label>
+					<help></help>
+					<checkable>1</checkable>
+				</object>
+				<object class="wxMenuItem" name="menuItemKinectSmoothMovement">
+					<label>Smooth Movement</label>
+					<help></help>
+					<checked>1</checked>
+					<checkable>1</checkable>
+				</object>
+			</object>
+			<object class="wxMenu">
+				<label>Help</label>
+				<object class="wxMenuItem" name="menuItemAbout">
+					<label>About</label>
+					<help></help>
+				</object>
+			</object>
+		</object>
+		<object class="wxSplitterWindow" name="m_splitter2">
+			<style>wxSP_3D|wxSP_NO_XP_THEME</style>
+			<sashpos>430</sashpos>
+			<gravity>0</gravity>
+			<minsize>80</minsize>
+			<orientation>horizontal</orientation>
+			<object class="wxPanel" name="m_panel10">
+				<style>wxTAB_TRAVERSAL</style>
+				<object class="wxBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxSplitterWindow" name="m_splitter1">
+							<style>wxSP_3D|wxSP_NO_XP_THEME</style>
+							<sashpos>0</sashpos>
+							<gravity>0</gravity>
+							<minsize>0</minsize>
+							<orientation>vertical</orientation>
+							<object class="wxScrolledWindow" name="m_scrolledSidePanel">
+								<style>wxHSCROLL|wxVSCROLL</style>
+								<object class="wxBoxSizer">
+									<orient>wxVERTICAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND | wxALL</flag>
+										<border>3</border>
+										<object class="wxNotebook" name="m_notebook1">
+											<object class="notebookpage">
+												<label>Tool Configuration</label>
+												<selected>1</selected>
+												<object class="wxPanel" name="m_panel6">
+													<style>wxTAB_TRAVERSAL</style>
+													<object class="wxBoxSizer">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<option>0</option>
+															<flag>wxEXPAND</flag>
+															<border>5</border>
+															<object class="wxBoxSizer">
+																<orient>wxHORIZONTAL</orient>
+																<object class="sizeritem">
+																	<option>0</option>
+																	<flag>wxALL</flag>
+																	<border>3</border>
+																	<object class="wxStaticText" name="m_staticText113">
+																		<font>
+																			<family>default</family>
+																			<style>normal</style>
+																			<weight>bold</weight>
+																			<underlined>0</underlined>
+																		</font>
+																		<label>Tool:</label>
+																		<wrap>-1</wrap>
+																	</object>
+																</object>
+																<object class="sizeritem">
+																	<option>1</option>
+																	<flag>wxALL</flag>
+																	<border>3</border>
+																	<object class="wxStaticText" name="m_lblToolName">
+																		<label>?</label>
+																		<wrap>-1</wrap>
+																	</object>
+																</object>
+															</object>
+														</object>
+														<object class="sizeritem">
+															<option>1</option>
+															<flag>wxEXPAND</flag>
+															<border>5</border>
+															<object class="wxStaticBoxSizer">
+																<orient>wxVERTICAL</orient>
+																<label>Tool configuration</label>
+																<object class="sizeritem">
+																	<option>1</option>
+																	<flag>wxEXPAND | wxALL</flag>
+																	<border>3</border>
+																	<object class="wxPanel" name="m_panelToolConfig">
+																		<style>wxTAB_TRAVERSAL</style>
+																		<object class="wxBoxSizer">
+																			<orient>wxVERTICAL</orient>
+																		</object>
+																	</object>
+																</object>
+															</object>
+														</object>
+													</object>
+												</object>
+											</object>
+											<object class="notebookpage">
+												<label>WiiMote</label>
+												<selected>0</selected>
+												<object class="wxPanel" name="m_panel5">
+													<style>wxTAB_TRAVERSAL</style>
+													<object class="wxBoxSizer">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<option>0</option>
+															<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+															<border>3</border>
+															<object class="wxToggleButton" name="m_tglbtEnableWiiMote">
+																<label>Enable 3D Tools</label>
+																<checked>0</checked>
+															</object>
+														</object>
+														<object class="sizeritem">
+															<option>1</option>
+															<flag>wxEXPAND</flag>
+															<border>5</border>
+															<object class="wxStaticBoxSizer">
+																<orient>wxVERTICAL</orient>
+																<label>WiiMote info</label>
+																<object class="sizeritem">
+																	<option>0</option>
+																	<flag>wxEXPAND | wxALL</flag>
+																	<border>0</border>
+																	<object class="wxPanel" name="m_panelWiiMoteConnectionStatus">
+																		<style>wxTAB_TRAVERSAL</style>
+																		<object class="wxBoxSizer">
+																			<orient>wxVERTICAL</orient>
+																			<object class="sizeritem">
+																				<option>0</option>
+																				<flag>wxALL|wxEXPAND</flag>
+																				<border>0</border>
+																				<object class="wxGridBagSizer">
+																					<vgap>0</vgap>
+																					<hgap>0</hgap>
+																					<growablecols></growablecols>
+																					<growablerows></growablerows>
+																					<object class="sizeritem">
+																						<cellpos>0,0</cellpos>
+																						<cellspan>1,1</cellspan>
+																						<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																						<border>3</border>
+																						<object class="wxStaticText" name="m_staticText8">
+																							<style>wxALIGN_RIGHT</style>
+																							<font>
+																								<family>default</family>
+																								<style>normal</style>
+																								<weight>bold</weight>
+																								<underlined>0</underlined>
+																							</font>
+																							<label>Status:</label>
+																							<wrap>-1</wrap>
+																						</object>
+																					</object>
+																					<object class="sizeritem">
+																						<cellpos>0,1</cellpos>
+																						<cellspan>1,1</cellspan>
+																						<flag>wxALIGN_CENTER|wxLEFT</flag>
+																						<border>3</border>
+																						<object class="wxStaticText" name="m_lblWiiMoteStatus">
+																							<label>[DISCONNECTED]</label>
+																							<wrap>-1</wrap>
+																						</object>
+																					</object>
+																					<object class="sizeritem">
+																						<cellpos>0,3</cellpos>
+																						<cellspan>2,1</cellspan>
+																						<flag>wxALL|wxEXPAND</flag>
+																						<border>3</border>
+																						<object class="wxBitmapButton" name="m_bpbtConnectWiiMote">
+																							<style>wxBU_AUTODRAW</style>
+																							<bitmap>MEDIA/wiimoteDisconnected.png</bitmap>
+																							<default>0</default>
+																						</object>
+																					</object>
+																					<object class="sizeritem">
+																						<cellpos>1,0</cellpos>
+																						<cellspan>1,1</cellspan>
+																						<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																						<border>3</border>
+																						<object class="wxStaticText" name="m_staticText12">
+																							<style>wxALIGN_RIGHT</style>
+																							<font>
+																								<family>default</family>
+																								<style>normal</style>
+																								<weight>bold</weight>
+																								<underlined>0</underlined>
+																							</font>
+																							<label>ID:</label>
+																							<wrap>-1</wrap>
+																						</object>
+																					</object>
+																					<object class="sizeritem">
+																						<cellpos>1,1</cellpos>
+																						<cellspan>1,1</cellspan>
+																						<flag>wxALIGN_CENTER|wxLEFT</flag>
+																						<border>3</border>
+																						<object class="wxStaticText" name="m_lblId">
+																							<label>12345678901234567890</label>
+																							<wrap>-1</wrap>
+																						</object>
+																					</object>
+																				</object>
+																			</object>
+																		</object>
+																	</object>
+																</object>
+																<object class="sizeritem">
+																	<option>0</option>
+																	<flag>wxEXPAND</flag>
+																	<border>3</border>
+																	<object class="wxStaticBoxSizer">
+																		<orient>wxVERTICAL</orient>
+																		<label>Status</label>
+																		<object class="sizeritem">
+																			<option>0</option>
+																			<flag>wxEXPAND</flag>
+																			<border>3</border>
+																			<object class="wxGridBagSizer">
+																				<vgap>0</vgap>
+																				<hgap>0</hgap>
+																				<growablecols></growablecols>
+																				<growablerows></growablerows>
+																				<object class="sizeritem">
+																					<cellpos>0,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText10">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Battery:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>0,1</cellpos>
+																					<cellspan>1,2</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblBattery">
+																						<label>1000%</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>1,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText14">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>LEDs:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>1,1</cellpos>
+																					<cellspan>1,2</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblLEDs">
+																						<label>-**-</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>2,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText16">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Buttons:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>2,1</cellpos>
+																					<cellspan>1,2</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblButtons">
+																						<label>UP, DOWN, LEFT, RIGHT, POWER, A, MINUS, HOME, PLUS, ONE, TWO, B</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>3,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText18">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Acceleration:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>3,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText19">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>X:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>3,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblAccelX">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>4,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText21">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>Y:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>4,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblAccelY">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>5,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText23">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>Z:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>5,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblAccelZ">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>6,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText25">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Orientation:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>6,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText26">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>X:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>6,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblOrientX">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>7,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText28">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>Y:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>7,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblOrientY">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>8,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText30">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>Z:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>8,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblOrientZ">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>9,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText32">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>Pitch:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>9,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblPitch">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>10,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText34">
+																						<style>wxALIGN_RIGHT</style>
+																						<label>Roll:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>10,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblRoll">
+																						<label>000.000000</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>11,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL|wxEXPAND</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText33">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Motion Plus:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>11,1</cellpos>
+																					<cellspan>1,2</cellspan>
+																					<flag>wxALL</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblMotionPlusState">
+																						<label>[DISCONNECTED]</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>12,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALL</flag>
+																					<border>3</border>
+																					<object class="wxCheckBox" name="m_chkUseMotionPlus">
+																						<label>Enable</label>
+																						<checked>1</checked>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>13,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALIGN_LEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText35">
+																						<label>Yaw:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>13,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblMotionPlusYaw">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>14,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText37">
+																						<label>Pitch:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>14,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblMotionPlusPitch">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>15,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText39">
+																						<label>Roll:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>15,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER_VERTICAL|wxEXPAND|wxLEFT</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblMotionPlusRoll">
+																						<label>?</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																			</object>
+																		</object>
+																	</object>
+																</object>
+																<object class="spacer">
+																	<option>1</option>
+																	<flag>wxEXPAND</flag>
+																	<border>5</border>
+																	<size>0,0</size>
+																</object>
+																<object class="sizeritem">
+																	<option>1</option>
+																	<flag>wxEXPAND</flag>
+																	<border>5</border>
+																	<object class="wxStaticBoxSizer">
+																		<orient>wxVERTICAL</orient>
+																		<label>Configuration</label>
+																		<object class="sizeritem">
+																			<option>1</option>
+																			<flag>wxEXPAND</flag>
+																			<border>5</border>
+																			<object class="wxBoxSizer">
+																				<orient>wxHORIZONTAL</orient>
+																				<object class="sizeritem">
+																					<option>0</option>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText45">
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Sensitivity:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<option>1</option>
+																					<flag>wxALL</flag>
+																					<border>3</border>
+																					<object class="wxSlider" name="m_sliderWiimoteSensibility">
+																						<style>wxSL_HORIZONTAL</style>
+																						<value>500</value>
+																						<min>1</min>
+																						<max>1000</max>
+																					</object>
+																				</object>
+																			</object>
+																		</object>
+																	</object>
+																</object>
+															</object>
+														</object>
+													</object>
+												</object>
+											</object>
+											<object class="notebookpage">
+												<label>Kinect</label>
+												<selected>0</selected>
+												<object class="wxPanel" name="m_panel61">
+													<style>wxTAB_TRAVERSAL</style>
+													<object class="wxBoxSizer">
+														<orient>wxVERTICAL</orient>
+														<object class="sizeritem">
+															<option>1</option>
+															<flag>wxEXPAND</flag>
+															<border>5</border>
+															<object class="wxStaticBoxSizer">
+																<orient>wxVERTICAL</orient>
+																<label>Kinect Info</label>
+																<object class="sizeritem">
+																	<option>0</option>
+																	<flag>wxEXPAND</flag>
+																	<border>0</border>
+																	<object class="wxBoxSizer">
+																		<orient>wxHORIZONTAL</orient>
+																		<object class="sizeritem">
+																			<option>1</option>
+																			<flag>wxEXPAND</flag>
+																			<border>5</border>
+																			<object class="wxGridBagSizer">
+																				<vgap>0</vgap>
+																				<hgap>0</hgap>
+																				<growablecols></growablecols>
+																				<growablerows></growablerows>
+																				<object class="sizeritem">
+																					<cellpos>0,0</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText81">
+																						<style>wxALIGN_RIGHT</style>
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Status:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>0,1</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblKinectStatus">
+																						<label>[DISCONNECTED]</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<cellpos>0,2</cellpos>
+																					<cellspan>1,1</cellspan>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxBitmapButton" name="m_bpbtConnectKinect">
+																						<style>wxBU_AUTODRAW</style>
+																						<bitmap>MEDIA\kinectDisconnected.png</bitmap>
+																						<default>0</default>
+																					</object>
+																				</object>
+																			</object>
+																		</object>
+																	</object>
+																</object>
+																<object class="sizeritem">
+																	<option>0</option>
+																	<flag>wxALIGN_CENTER</flag>
+																	<border>0</border>
+																	<object class="wxPanel" name="m_kinectDrawPanel">
+																		<style>wxTAB_TRAVERSAL</style>
+																		<size>320,240</size>
+																		<bg>#0000ff</bg>
+																		<object class="wxBoxSizer">
+																			<minsize>320,240</minsize>
+																			<orient>wxVERTICAL</orient>
+																		</object>
+																	</object>
+																</object>
+																<object class="spacer">
+																	<option>1</option>
+																	<flag>wxEXPAND</flag>
+																	<border>5</border>
+																	<size>0,0</size>
+																</object>
+																<object class="sizeritem">
+																	<option>0</option>
+																	<flag>wxALIGN_BOTTOM|wxALL|wxEXPAND</flag>
+																	<border>3</border>
+																	<object class="wxStaticBoxSizer">
+																		<orient>wxVERTICAL</orient>
+																		<label>Configuration</label>
+																		<object class="sizeritem">
+																			<option>1</option>
+																			<flag>wxEXPAND</flag>
+																			<border>5</border>
+																			<object class="wxBoxSizer">
+																				<orient>wxHORIZONTAL</orient>
+																				<object class="sizeritem">
+																					<option>0</option>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_staticText451">
+																						<font>
+																							<family>default</family>
+																							<style>normal</style>
+																							<weight>bold</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>Elevation Angle:</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<option>1</option>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxSlider" name="m_sliderKinectElevationAngle">
+																						<style>wxSL_HORIZONTAL</style>
+																						<value>500</value>
+																						<min>1</min>
+																						<max>1000</max>
+																					</object>
+																				</object>
+																				<object class="sizeritem">
+																					<option>0</option>
+																					<flag>wxALIGN_CENTER|wxALL</flag>
+																					<border>3</border>
+																					<object class="wxStaticText" name="m_lblElevationAngleValue">
+																						<font>
+																							<family>default</family>
+																							<style>italic</style>
+																							<weight>normal</weight>
+																							<underlined>0</underlined>
+																						</font>
+																						<label>0</label>
+																						<wrap>-1</wrap>
+																					</object>
+																				</object>
+																			</object>
+																		</object>
+																	</object>
+																</object>
+															</object>
+														</object>
+													</object>
+												</object>
+											</object>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="wxPanel" name="m_panelVTKWidget">
+								<style>wxTAB_TRAVERSAL</style>
+								<bg>#ff0000</bg>
+								<object class="wxBoxSizer">
+									<orient>wxVERTICAL</orient>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="wxPanel" name="m_panel11">
+				<style>wxTAB_TRAVERSAL</style>
+				<object class="wxBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxEXPAND</flag>
+						<border>3</border>
+						<object class="wxBoxSizer">
+							<orient>wxHORIZONTAL</orient>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+								<border>3</border>
+								<object class="wxStaticText" name="m_staticText50">
+									<font>
+										<family>default</family>
+										<style>normal</style>
+										<weight>bold</weight>
+										<underlined>0</underlined>
+									</font>
+									<label>Console:</label>
+									<wrap>-1</wrap>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALIGN_CENTER|wxALL</flag>
+								<border>3</border>
+								<object class="wxButton" name="m_btConsoleClear">
+									<style>wxBU_EXACTFIT</style>
+									<label>Clear</label>
+									<default>0</default>
+								</object>
+							</object>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxALL|wxEXPAND</flag>
+						<border>3</border>
+						<object class="wxTextCtrl" name="m_txtConsole">
+							<style>wxTE_MULTILINE|wxTE_READONLY</style>
+							<bg>#e3e3e3</bg>
+							<value></value>
+							<maxlength>0</maxlength>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+		<object class="wxToolBar" name="m_toolBar6">
+			<style>wxTB_FLAT|wxTB_HORIZONTAL</style>
+			<bitmapsize></bitmapsize>
+			<margins></margins>
+			<packing>1</packing>
+			<separation>5</separation>
+			<object class="tool" name="m_toolVisualize">
+				<label>tool</label>
+				<tooltip>Visualization tool</tooltip>
+				<longhelp>Visualization Mode allows you to change the way you visualize the scene</longhelp>
+				<bitmap>MEDIA/tbVisualize.png</bitmap>
+				<radio>1</radio>
+			</object>
+			<object class="tool" name="m_toolEraser2D">
+				<label>tool</label>
+				<tooltip>Eraser 2D</tooltip>
+				<longhelp>Eraser 2D allows you to select a circular area, and all the voxels within that area will be removed</longhelp>
+				<bitmap>MEDIA/tbEraser2D.png</bitmap>
+				<radio>1</radio>
+			</object>
+			<object class="tool" name="m_toolClipper2D">
+				<label>tool</label>
+				<tooltip>Clipper 2D</tooltip>
+				<longhelp>Clipper 2D allows you to draw a plane and remove the voxels that lie on a side of that plane</longhelp>
+				<bitmap>MEDIA/tbClipper2D.png</bitmap>
+				<radio>1</radio>
+			</object>
+			<object class="tool" name="m_toolPolyClipper2D">
+				<label>tool</label>
+				<tooltip>Polygonal Clipper 2D</tooltip>
+				<longhelp>Polygonal Clipper 2D allows you to draw a polygon and remove voxels that lie inside or outside it</longhelp>
+				<bitmap>MEDIA/tbPolyClipper2D.png</bitmap>
+				<radio>1</radio>
+			</object>
+		</object>
+		<object class="wxStatusBar" name="m_statusBar1">
+			<style>wxST_SIZEGRIP</style>
+			<fields>1</fields>
+		</object>
+	</object>
+	<object class="wxDialog" name="AboutDialog">
+		<style>wxDEFAULT_DIALOG_STYLE</style>
+		<title>About</title>
+		<centered>1</centered>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>3</border>
+				<object class="wxStaticBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<label>VTK Clipper</label>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxFlexGridSizer">
+							<rows>2</rows>
+							<cols>2</cols>
+							<vgap>0</vgap>
+							<hgap>0</hgap>
+							<growablecols></growablecols>
+							<growablerows></growablerows>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALL|wxEXPAND</flag>
+								<border>3</border>
+								<object class="wxStaticText" name="m_staticText2">
+									<style>wxALIGN_RIGHT</style>
+									<font>
+										<family>default</family>
+										<style>normal</style>
+										<weight>bold</weight>
+										<underlined>0</underlined>
+									</font>
+									<label>Author:</label>
+									<wrap>-1</wrap>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALL</flag>
+								<border>3</border>
+								<object class="wxStaticText" name="m_staticText3">
+									<label>Vinicius Rogerio Araujo Silva</label>
+									<wrap>-1</wrap>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALL|wxEXPAND</flag>
+								<border>3</border>
+								<object class="wxStaticText" name="m_staticText4">
+									<style>wxALIGN_RIGHT</style>
+									<font>
+										<family>default</family>
+										<style>normal</style>
+										<weight>bold</weight>
+										<underlined>0</underlined>
+									</font>
+									<label>Contact:</label>
+									<wrap>-1</wrap>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALL</flag>
+								<border>3</border>
+								<object class="wxStaticText" name="m_staticText5">
+									<label>vinicius__ras@hotmail.com</label>
+									<wrap>-1</wrap>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>3</border>
+				<object class="wxButton" name="m_btOk">
+					<label>OK!</label>
+					<default>0</default>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxPanel" name="PanelToolNoConfig">
+		<style>wxTAB_TRAVERSAL</style>
+		<size>500,300</size>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxALL</flag>
+				<border>3</border>
+				<object class="wxStaticText" name="m_staticText116">
+					<label>No configurations available.</label>
+					<wrap>-1</wrap>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxPanel" name="PanelEraserToolConfig">
+		<style>wxTAB_TRAVERSAL</style>
+		<size>500,300</size>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND</flag>
+				<border>3</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+						<border>3</border>
+						<object class="wxStaticText" name="m_staticText115">
+							<label>Cursor radius:</label>
+							<wrap>-1</wrap>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>3</border>
+						<object class="wxTextCtrl" name="m_txtCursorRadius">
+							<style>wxTE_READONLY</style>
+							<value></value>
+							<maxlength>0</maxlength>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>3</border>
+						<object class="wxButton" name="m_btSetCursorRadius">
+							<label>...</label>
+							<default>0</default>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>3</border>
+				<object class="wxSlider" name="m_sliderCursorRadius">
+					<style>wxSL_HORIZONTAL</style>
+					<value>100</value>
+					<min>0</min>
+					<max>500</max>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxPanel" name="PanelKinectRenderer">
+		<style>wxFULL_REPAINT_ON_RESIZE|wxTAB_TRAVERSAL</style>
+		<size>320,240</size>
+		<bg>#009600</bg>
+	</object>
+</resource>
